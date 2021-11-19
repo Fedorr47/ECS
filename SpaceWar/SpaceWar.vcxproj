@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a69cc281-7812-48a9-b9ec-262b7d04cfef}</ProjectGuid>
+    <RootNamespace>SpaceWar</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(ProjectDir)libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)Public;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)Public;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)libs;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\_Main\SFML\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>E:\_Main\SFML\SFML\build\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\_Main\SFML\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>E:\_Main\SFML\SFML\build\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STAT;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\_Main\entityx;..\SpaceWar\Public;E:\_Main\SFML\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>E:\_Main\SFML\SFML\build\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-audio-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-system-d.lib;sfml-network-d.lib;entityx-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STAT;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\SpaceWar\Public;E:\_Main\SFML\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>E:\_Main\SFML\SFML\build\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-audio.lib;sfml-window.lib;sfml-graphics.lib;sfml-system.lib;sfml-network.lib;entityx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Private\ECS\EntityManager.cpp" />
+    <ClCompile Include="Private\ECS\SystemBase.cpp" />
+    <ClCompile Include="Private\ECS\SystemCollision.cpp" />
+    <ClCompile Include="Private\ECS\SystemControl.cpp" />
+    <ClCompile Include="Private\ECS\SystemDamage.cpp" />
+    <ClCompile Include="Private\ECS\SystemHealth.cpp" />
+    <ClCompile Include="Private\ECS\SystemLifetime.cpp" />
+    <ClCompile Include="Private\ECS\SystemManager.cpp" />
+    <ClCompile Include="Private\ECS\SystemMovement.cpp" />
+    <ClCompile Include="Private\ECS\SystemParticle.cpp" />
+    <ClCompile Include="Private\ECS\SystemPosition.cpp" />
+    <ClCompile Include="Private\ECS\SystemPosses.cpp" />
+    <ClCompile Include="Private\ECS\SystemProjectile.cpp" />
+    <ClCompile Include="Private\ECS\SystemRender.cpp" />
+    <ClCompile Include="Private\ECS\SystemRespawn.cpp" />
+    <ClCompile Include="Private\ECS\SystemScore.cpp" />
+    <ClCompile Include="Private\ECS\SystemSpawn.cpp" />
+    <ClCompile Include="Private\ECS\SystemState.cpp" />
+    <ClCompile Include="Private\GameData\Application.cpp" />
+    <ClCompile Include="Private\GameData\EventManager.cpp" />
+    <ClCompile Include="Private\GameData\EventQueue.cpp" />
+    <ClCompile Include="Private\GameData\HUD.cpp" />
+    <ClCompile Include="Private\GameData\States\GameOverState.cpp" />
+    <ClCompile Include="Private\GameData\States\GameState.cpp" />
+    <ClCompile Include="Private\GameData\States\MenuState.cpp" />
+    <ClCompile Include="Private\GameData\States\StateManager.cpp" />
+    <ClCompile Include="Private\GameData\Window.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Public\ECS\Bitmask.h" />
+    <ClInclude Include="Public\ECS\Communicator.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentBase.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentCollidable.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentCombat.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentDamage.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentDrawble.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentHealth.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentLifetime.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentMovable.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentParticleEmmiter.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentPosition.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentPossesive.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentProjectile.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentRespawn.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentScore.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentSprite.h" />
+    <ClInclude Include="Public\ECS\Components\ComponentState.h" />
+    <ClInclude Include="Public\ECS\ECS_Types.h" />
+    <ClInclude Include="Public\ECS\EntityManager.h" />
+    <ClInclude Include="Public\ECS\EntityMessages.h" />
+    <ClInclude Include="Public\ECS\Message.h" />
+    <ClInclude Include="Public\ECS\MessageHandler.h" />
+    <ClInclude Include="Public\ECS\Observer.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemBase.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemCollision.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemControl.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemDamage.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemHealth.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemLifetime.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemManager.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemMovement.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemParticle.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemPosition.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemPosses.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemProjectile.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemRender.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemRespawn.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemScore.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemSpawn.h" />
+    <ClInclude Include="Public\ECS\Systems\SystemState.h" />
+    <ClInclude Include="Public\GameData\Application.h" />
+    <ClInclude Include="Public\GameData\EntityEvents.h" />
+    <ClInclude Include="Public\GameData\EventManager.h" />
+    <ClInclude Include="Public\GameData\EventQueue.h" />
+    <ClInclude Include="Public\GameData\GlobalEnums.h" />
+    <ClInclude Include="Public\GameData\GlobalStructs.h" />
+    <ClInclude Include="Public\GameData\HUD.h" />
+    <ClInclude Include="Public\GameData\ResourceManager.h" />
+    <ClInclude Include="Public\GameData\SharedContext.h" />
+    <ClInclude Include="Public\GameData\States\BaseState.h" />
+    <ClInclude Include="Public\GameData\States\GameOverState.h" />
+    <ClInclude Include="Public\GameData\States\GameState.h" />
+    <ClInclude Include="Public\GameData\States\MenuState.h" />
+    <ClInclude Include="Public\GameData\States\StateManager.h" />
+    <ClInclude Include="Public\GameData\TextureManager.h" />
+    <ClInclude Include="Public\GameData\Utils.h" />
+    <ClInclude Include="Public\GameData\Window.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

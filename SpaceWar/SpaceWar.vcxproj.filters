@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Public">
+      <UniqueIdentifier>{947cf25e-0719-455e-b4ba-d699c480fa42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private">
+      <UniqueIdentifier>{4b1098ca-de2a-4e25-8b45-69d3920df625}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\ECS">
+      <UniqueIdentifier>{90e0f4ba-9854-4a78-9934-0eebd1a8fcf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\GameData">
+      <UniqueIdentifier>{a9c2bf0b-22d7-43ac-9563-e8475a083085}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\GameData\States">
+      <UniqueIdentifier>{8f70bad5-613a-45a5-a41f-5707514b005b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\ECS">
+      <UniqueIdentifier>{8dd6ab95-9034-40e4-8505-f48a538e9909}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\GameData">
+      <UniqueIdentifier>{ed2fe2ac-bff1-44c9-8819-393c477075df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\GameData\States">
+      <UniqueIdentifier>{9c7e24ad-b0d4-4a49-9c25-b712c1f34a6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\ECS\Components">
+      <UniqueIdentifier>{27368239-09b4-4283-8a7f-8f2789343b8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\ECS\Systems">
+      <UniqueIdentifier>{0d637f2d-6b42-41e5-b7a2-85871681e706}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\GameData\States\GameOverState.cpp">
+      <Filter>Private\GameData\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\GameData\States\MenuState.cpp">
+      <Filter>Private\GameData\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\GameData\Application.cpp">
+      <Filter>Private\GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\GameData\Window.cpp">
+      <Filter>Private\GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\GameData\EventQueue.cpp">
+      <Filter>Private\GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\GameData\States\StateManager.cpp">
+      <Filter>Private\GameData\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\GameData\EventManager.cpp">
+      <Filter>Private\GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\GameData\States\GameState.cpp">
+      <Filter>Private\GameData\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\EntityManager.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemBase.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemCollision.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemControl.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemManager.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemMovement.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemRender.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemSpawn.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemState.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemParticle.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemPosition.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemLifetime.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemDamage.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemHealth.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemProjectile.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemRespawn.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemPosses.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\ECS\SystemScore.cpp">
+      <Filter>Private\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\GameData\HUD.cpp">
+      <Filter>Private\GameData</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\States\GameOverState.h">
+      <Filter>Public\GameData\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\States\MenuState.h">
+      <Filter>Public\GameData\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\Application.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\Window.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\EntityEvents.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\EventQueue.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\ResourceManager.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\TextureManager.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\States\StateManager.h">
+      <Filter>Public\GameData\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\States\BaseState.h">
+      <Filter>Public\GameData\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\SharedContext.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\EventManager.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\States\GameState.h">
+      <Filter>Public\GameData\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Bitmask.h">
+      <Filter>Public\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Communicator.h">
+      <Filter>Public\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\ECS_Types.h">
+      <Filter>Public\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\EntityManager.h">
+      <Filter>Public\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\EntityMessages.h">
+      <Filter>Public\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Message.h">
+      <Filter>Public\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\MessageHandler.h">
+      <Filter>Public\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Observer.h">
+      <Filter>Public\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\GlobalEnums.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentBase.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentCollidable.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentCombat.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentDrawble.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentMovable.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentParticleEmmiter.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentPosition.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentSprite.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentState.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemBase.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemCollision.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemControl.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemManager.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemMovement.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemParticle.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemRender.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemSpawn.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemState.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemPosition.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentDamage.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentHealth.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentLifetime.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemLifetime.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemDamage.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemHealth.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentProjectile.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemProjectile.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\GlobalStructs.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentRespawn.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemRespawn.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemPosses.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentPossesive.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Components\ComponentScore.h">
+      <Filter>Public\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\ECS\Systems\SystemScore.h">
+      <Filter>Public\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\HUD.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\GameData\Utils.h">
+      <Filter>Public\GameData</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
