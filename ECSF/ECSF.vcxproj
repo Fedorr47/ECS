@@ -160,8 +160,10 @@
   <ItemGroup>
     <ClInclude Include="Allocator.h" />
     <ClInclude Include="Bitmask.h" />
+    <ClInclude Include="ComponentAdder.h" />
     <ClInclude Include="ComponentContainer.h" />
     <ClInclude Include="EntityManager.h" />
+    <ClInclude Include="IComponentAdder.h" />
     <ClInclude Include="IComponentBase.h" />
     <ClInclude Include="IEntityManager.h" />
     <ClInclude Include="framework.h" />
@@ -169,6 +171,7 @@
     <ClInclude Include="ECS_utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ComponentAdder.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="pch.cpp">

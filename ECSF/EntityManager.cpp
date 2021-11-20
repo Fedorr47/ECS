@@ -1,6 +1,17 @@
 #include "pch.h"
 #include "EntityManager.h"
 
+IEntityManager* EntityManager::ObjectEntityManager = nullptr;
+
+IEntityManager* EntityManager::GetInstance()
+{
+	if (ObjectEntityManager == nullptr)
+	{
+		ObjectEntityManager = new EntityManager();
+	}
+	return ObjectEntityManager;
+}
+
 const EntityID EntityManager::AddEntity()
 {
 	EntityID EntityId = 0;
@@ -59,6 +70,5 @@ IComponentBase* EntityManager::GetComponent(const EntityID InEntityId, const Com
 
 IEntityManager* CreateEntityManager()
 {
-	IEntityManager* ObjEntityManager = new EntityManager();
-	return ObjEntityManager;
+	return EntityManager::GetInstance();
 }

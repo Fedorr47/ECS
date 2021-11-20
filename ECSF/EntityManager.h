@@ -4,14 +4,19 @@
 
 class ECSF_API EntityManager : public IEntityManager
 {
-public:
+protected:
 	EntityManager() :
 		IEntityManager(),
 		mMaxEntitiesCount(DEFAULT_MAX_ENTITIES_COUNT)
 	{
 		mFreeEntityIDs.resize(DEFAULT_MAX_ENTITIES_COUNT);
 	}
-	virtual ~EntityManager() {}
+public:
+	virtual ~EntityManager() {
+		ObjectEntityManager = nullptr;
+	}
+
+	static IEntityManager* GetInstance();
 
 	const EntityID AddEntity() override;
 	bool RemoveEntity(const EntityID InEntityId) override;
@@ -28,8 +33,14 @@ public:
 	IComponentBase* GetComponent(const EntityID InEntityId, const ComponentType InComponentType) override;
 
 private:
+
+	EntityManager(EntityManager& other) = delete;
+	void operator=(const EntityManager&) = delete;
+
 	size_t mMaxEntitiesCount;
 	std::vector<bool> mFreeEntityIDs;
+
+	static IEntityManager* ObjectEntityManager;
 };
 
 extern "C" ECSF_API IEntityManager* CreateEntityManager();

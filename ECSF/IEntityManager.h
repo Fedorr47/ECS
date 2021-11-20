@@ -1,24 +1,22 @@
 #pragma once
 
-#include <vector>
-
-#include "ECS_utils.h"
-#include "ComponentContainer.h"
-
 #ifdef ECSF_EXPORTS
 #define ECSF_API __declspec(dllexport)
 #else
 #define ECSF_API __declspec(dllimport)
 #endif
 
-using EntityData = std::pair<EntityID, ComponentContainer<std::allocator<IComponentBase>>>;
+#include <vector>
+
+#include "ECS_utils.h"
+#include "ComponentContainer.h"
 
 class ECSF_API IEntityManager
 {
 public:
 
-	IEntityManager() {};
-	virtual ~IEntityManager() {};
+	IEntityManager() {}
+	virtual ~IEntityManager() {}
 
 	virtual const EntityID AddEntity() = 0;
 	virtual bool RemoveEntity(const EntityID InEntityId) = 0;

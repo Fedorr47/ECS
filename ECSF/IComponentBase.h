@@ -1,9 +1,14 @@
 #pragma once
-#pragma once
+
+#ifdef ECSF_EXPORTS
+#define ECSF_API __declspec(dllexport)
+#else
+#define ECSF_API __declspec(dllimport)
+#endif
 
 #include "ECS_utils.h"
 
-class IComponentBase
+class ECSF_API IComponentBase
 {
 public:
 	explicit IComponentBase(const ComponentType InType) :
@@ -12,6 +17,6 @@ public:
 	
 	virtual const ComponentType GetType() const = 0;
 
-private:
+protected:
 	ComponentType mType;
 };

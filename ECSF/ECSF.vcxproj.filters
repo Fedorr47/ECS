@@ -42,6 +42,12 @@
     <ClInclude Include="IComponentBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IComponentAdder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentAdder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -51,6 +57,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EntityManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentAdder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
