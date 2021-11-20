@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "ComponentBase.h"
+#include "IComponentBase.h"
 
 template <class ComponentAllocator>
 class ComponentContainer
@@ -13,12 +13,12 @@ public:
 	~ComponentContainer()
 	{}
 
-	bool AddComponent(ComponentBase* Component)
+	bool AddComponent(IComponentBase* Component)
 	{
 		bool Result = false;
 		return Result;
 	}
-	bool RemoveComponent(ComponentBase* Component)
+	bool RemoveComponent(IComponentBase* Component)
 	{
 		bool Result = false;
 		return Result;

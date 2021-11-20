@@ -33,13 +33,13 @@
     <ClInclude Include="ComponentContainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ComponentBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="IEntityManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EntityManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IComponentBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

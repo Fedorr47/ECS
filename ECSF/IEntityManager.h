@@ -11,7 +11,7 @@
 #define ECSF_API __declspec(dllimport)
 #endif
 
-using EntityData = std::pair<EntityID, ComponentContainer<std::allocator<ComponentBase>>>;
+using EntityData = std::pair<EntityID, ComponentContainer<std::allocator<IComponentBase>>>;
 
 class ECSF_API IEntityManager
 {
@@ -20,6 +20,15 @@ public:
 	IEntityManager() {};
 	virtual ~IEntityManager() {};
 
-	virtual EntityID AddEntity() = 0;
-	virtual bool RemoveEntity() = 0;
+	virtual const EntityID AddEntity() = 0;
+	virtual bool RemoveEntity(const EntityID InEntityId) = 0;
+	virtual bool HasEntity(const EntityID InEntityId) = 0;
+
+	virtual const size_t GetMaxEntitiesCount() const = 0;
+	virtual void SetMaxEntitiesCount(const size_t InMaxEntitiesCount) = 0;
+
+	virtual bool AddComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
+	virtual bool RemoveComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
+	virtual bool HasComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
+	virtual IComponentBase* GetComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
 };
