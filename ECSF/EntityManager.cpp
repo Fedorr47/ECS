@@ -1,5 +1,7 @@
 #include "pch.h"
+
 #include "EntityManager.h"
+#include "ComponentAdder.h"
 
 IEntityManager* EntityManager::ObjectEntityManager = nullptr;
 
@@ -11,6 +13,10 @@ IEntityManager* EntityManager::GetInstance()
 	}
 	return ObjectEntityManager;
 }
+
+/*****************************************************************************/
+/*					Entity Logic											 */
+/*****************************************************************************/
 
 const EntityID EntityManager::AddEntity()
 {
@@ -29,7 +35,7 @@ const EntityID EntityManager::AddEntity()
 
 bool EntityManager::RemoveEntity(const EntityID InEntityId)
 {
-	bool Result = true;
+	bool Result = false;
 
 	if (HasEntity(InEntityId))
 	{
@@ -45,27 +51,51 @@ bool EntityManager::HasEntity(const EntityID InEntityId)
 	return InEntityId <= mMaxEntitiesCount && mFreeEntityIDs[InEntityId-1];
 }
 
+/*****************************************************************************/
+/*					ComponentAdder Logic									 */
+/*****************************************************************************/
+
+bool EntityManager::RegisterComponent(const ComponentType InComponentType)
+{
+	return false;
+}
+
+bool EntityManager::UnregisterComponent(const ComponentType InComponentType)
+{
+	return mComponentAdder->UnregisterComponentType(InComponentType);
+}
+
+/*****************************************************************************/
+/*					Component Logic											 */
+/*****************************************************************************/
+
 bool EntityManager::AddComponent(const EntityID InEntityId, const ComponentType InComponentType)
 {
-	bool Result = true;
+	bool Result = false;
+	OptionalComponent pComponent = mComponentAdder->HasComponent(InComponentType);
+	if (pComponent)
+	{
+		//mComponentsContainer->AddComponent(pComponent.get());
+		Result = true;
+	}
 	return Result;
 }
 
 bool EntityManager::RemoveComponent(const EntityID InEntityId, const ComponentType InComponentType)
 {
-	bool Result = true;
+	bool Result = false;
 	return Result;
 }
 
 bool EntityManager::HasComponent(const EntityID InEntityId, const ComponentType InComponentType)
 {
-	bool Result = true;
+	bool Result = false;
 	return Result;
 }
 
-IComponentBase* EntityManager::GetComponent(const EntityID InEntityId, const ComponentType InComponentType)
+std::optional<IComponentBase*> EntityManager::GetComponent(const EntityID InEntityId, const ComponentType InComponentType)
 {
-	return nullptr;
+	return {};
 }
 
 IEntityManager* CreateEntityManager()

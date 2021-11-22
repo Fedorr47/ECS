@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "EntityManagerTests.h"
 
+/*****************************************************************************/
+/*					Entity tests											 */
+/*****************************************************************************/
 TEST(EntityManagerTest, EntityManagerCreate) {
 	std::weak_ptr<IEntityManager> WeakObjEntityManager;
 	{
@@ -37,32 +40,43 @@ TEST_F(TestEntityManager, RemoveEntity) {
 	EXPECT_TRUE(ObjEntityManager->RemoveEntity(CreatedEntityId));
 }
 
+/*****************************************************************************/
+/*					Component tests											 */
+/*****************************************************************************/
 TEST_F(TestEntityManager, AddComponent) {
 	ComponentType lComponentType = 0;
 
+	ObjEntityManager->RegisterComponent<TestComponent1>(static_cast<ComponentType>(lComponentType));
 	EntityID CreatedEntityId = ObjEntityManager->AddEntity();
 	EXPECT_TRUE(ObjEntityManager->AddComponent(CreatedEntityId, lComponentType));
 }
 
+// Wait implimentation
 TEST_F(TestEntityManager, HasComponent) {
 	ComponentType lComponentType = 0;
 
+	ObjEntityManager->RegisterComponent<TestComponent1>(static_cast<ComponentType>(lComponentType));
 	EntityID CreatedEntityId = ObjEntityManager->AddEntity();
 	ObjEntityManager->AddComponent(CreatedEntityId, lComponentType);
 	EXPECT_TRUE(ObjEntityManager->HasComponent(CreatedEntityId, lComponentType));
 }
 
+// Wait implimentation
 TEST_F(TestEntityManager, RemoveComponent) {
 	ComponentType lComponentType = 0;
 
+	ObjEntityManager->RegisterComponent<TestComponent1>(static_cast<ComponentType>(lComponentType));
 	EntityID CreatedEntityId = ObjEntityManager->AddEntity();
 	ObjEntityManager->AddComponent(CreatedEntityId, lComponentType);
 	EXPECT_TRUE(ObjEntityManager->RemoveComponent(CreatedEntityId, lComponentType));
 }
 
+// Wait implimentation
 TEST_F(TestEntityManager, GetComponent) {
 	ComponentType lComponentType = 0;
 
+	ObjEntityManager->RegisterComponent<TestComponent1>(static_cast<ComponentType>(lComponentType));
 	EntityID CreatedEntityId = ObjEntityManager->AddEntity();
 	ObjEntityManager->AddComponent(CreatedEntityId, lComponentType);
+	EXPECT_TRUE(ObjEntityManager->GetComponent(CreatedEntityId, lComponentType));
 }

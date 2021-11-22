@@ -1,15 +1,18 @@
 #pragma once
 
-#include "IComponentAdder.h"
-
+#include <any>
 #include <memory>
+#include <functional>
 #include <unordered_map>
+#include <optional>
 
 #include "ECS_utils.h"
+#include "IComponentBase.h"
 
-using ComponentMapType = std::unordered_map<ComponentType, std::unique_ptr<IComponentBase>>;
+using ComponentMapType = std::unordered_map<ComponentType, std::function<std::unique_ptr<IComponentBase>(void)>>;
+using OptionalComponent = std::optional<std::unique_ptr<IComponentBase>>;
 
-class ComponentAdder : public IComponentAdder
+class ComponentAdder
 {
 public:
 	ComponentAdder() :
@@ -17,18 +20,32 @@ public:
 	{
 		mComponents.reserve(mComponentsCount);
 	}
-	virtual ~ComponentAdder() {}
+	virtual ~ComponentAdder() {
+	}
 
-	IComponentAdder* GetInstance();
+	template <class TComponentType>
+	bool RegisterComponentType(const ComponentType InComponentType);
+	bool UnregisterComponentType(const ComponentType InComponentType);
+	OptionalComponent HasComponent(const ComponentType InComponentType);
 
-	bool AddComponent(std::unique_ptr<IComponentBase> InComponent) override;
-	bool RemoveComponent(const ComponentType InComponentType) override;
+	const size_t GetComponentsCount() const { return mComponentsCount; }
+	void SetComponentsCount(const size_t InComponentsCount) { mComponentsCount = InComponentsCount; }
 
 private:
 	size_t mComponentsCount;
 	ComponentMapType mComponents;
-
-	static IComponentAdder* ObjectComponentAdder;
 };
 
-extern "C" ECSF_API IComponentAdder* GetComponentAdder();
+template <class TComponentType>
+bool ComponentAdder::RegisterComponentType(const ComponentType InComponentType)
+{
+	bool Result = false;
+	if (InComponentType <= mComponentsCount)
+	{
+		mComponents.emplace(InComponentType, [&]() -> std::unique_ptr<IComponentBase> { return std::make_unique<TComponentType>(InComponentType); });
+		Result = true;
+	}
+
+	return Result;
+}
+

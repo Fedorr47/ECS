@@ -7,9 +7,10 @@
 #endif
 
 #include <vector>
+#include <optional>
 
 #include "ECS_utils.h"
-#include "ComponentContainer.h"
+#include "ComponentsContainer.h"
 
 class ECSF_API IEntityManager
 {
@@ -25,8 +26,13 @@ public:
 	virtual const size_t GetMaxEntitiesCount() const = 0;
 	virtual void SetMaxEntitiesCount(const size_t InMaxEntitiesCount) = 0;
 
+	virtual bool RegisterComponent(const ComponentType InComponentType) = 0;
+	virtual bool UnregisterComponent(const ComponentType InComponentType) = 0;
+	virtual const size_t GetComponentsCount() const = 0;
+	virtual void SetComponentsCount(const size_t InComponentsCount) = 0;
+
 	virtual bool AddComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
 	virtual bool RemoveComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
 	virtual bool HasComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
-	virtual IComponentBase* GetComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
+	virtual std::optional<IComponentBase*> GetComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
 };

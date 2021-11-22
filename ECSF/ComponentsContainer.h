@@ -5,12 +5,12 @@
 #include "IComponentBase.h"
 
 template <class ComponentAllocator>
-class ComponentContainer
+class ComponentsContainer
 {
 public:
-	ComponentContainer()
+	ComponentsContainer()
 	{}
-	~ComponentContainer()
+	~ComponentsContainer()
 	{}
 
 	bool AddComponent(IComponentBase* Component)
@@ -23,4 +23,6 @@ public:
 		bool Result = false;
 		return Result;
 	}
+private:
+	//std::vector
 };

@@ -1,20 +1,12 @@
 #pragma once
 
-#include "ComponentAdder.h"
-#include "IComponentBase.h"
-
-enum class ComponentTypeTest
-{
-	TestComponentType1,
-	TestComponentType2,
-	MAX
-};
+#include "EntityManager.h"
 
 class TestComponent1 : public IComponentBase
 {
 public:
-	TestComponent1() :
-		IComponentBase(static_cast<ComponentType>(ComponentTypeTest::TestComponentType1))
+	TestComponent1(ComponentType InComponentType) :
+		IComponentBase(InComponentType)
 	{}
 
 	virtual const ComponentType GetType() const override
@@ -30,11 +22,10 @@ class TestComponentAdder : public ::testing::Test
 protected:
 	void SetUp()
 	{
-		ObjComponentAdder.reset(GetComponentAdder());
+		ObjEntityManager.reset(dynamic_cast<EntityManager*>(CreateEntityManager()));
 	}
 	void TearDown()
 	{
 	}
-
-	std::shared_ptr<IComponentAdder> ObjComponentAdder;
+	std::shared_ptr<EntityManager> ObjEntityManager;
 };
