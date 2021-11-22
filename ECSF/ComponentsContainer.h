@@ -3,8 +3,9 @@
 #include <memory>
 
 #include "IComponentBase.h"
+#include "PoolAllocator.h"
 
-template <class ComponentAllocator>
+template <class ComponentAllocator = PoolAllocator>
 class ComponentsContainer
 {
 public:

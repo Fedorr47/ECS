@@ -16,7 +16,7 @@ class ComponentAdder
 {
 public:
 	ComponentAdder() :
-		mComponentsCount(DEFAULT_MAX_COMPONENT_COUNT)
+		mComponentsCount{ DEFAULT_MAX_COMPONENT_COUNT }
 	{
 		mComponents.reserve(mComponentsCount);
 	}

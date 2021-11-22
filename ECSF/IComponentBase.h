@@ -12,7 +12,7 @@ class ECSF_API IComponentBase
 {
 public:
 	explicit IComponentBase(const ComponentType InType) :
-		mType(InType)
+		mType{ InType }
 	{}
 	
 	virtual const ComponentType GetType() const = 0;

@@ -11,7 +11,7 @@ class ECSF_API EntityManager : public IEntityManager
 protected:
 	EntityManager() :
 		IEntityManager(),
-		mMaxEntitiesCount(DEFAULT_MAX_ENTITIES_COUNT)
+		mMaxEntitiesCount{ DEFAULT_MAX_ENTITIES_COUNT }
 	{
 		mFreeEntityIDs.resize(DEFAULT_MAX_ENTITIES_COUNT);
 		mComponentsContainer = std::make_unique<ComponentsContainerType>();

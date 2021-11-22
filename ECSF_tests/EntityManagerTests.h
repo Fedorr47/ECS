@@ -5,7 +5,7 @@ class TestComponent1 : public IComponentBase
 {
 public:
 	TestComponent1(ComponentType InComponentType) :
-		IComponentBase(InComponentType)
+		IComponentBase{ InComponentType }
 	{}
 
 	virtual const ComponentType GetType() const override
