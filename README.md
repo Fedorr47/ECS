@@ -1,3 +1,5 @@
 # ECS
 
-Времення заглушка, потом будет описание
+It's first iteration of ECS implimented by dll.
+
+* Inspiring by entityx
