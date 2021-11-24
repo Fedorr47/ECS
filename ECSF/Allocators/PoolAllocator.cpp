@@ -10,6 +10,7 @@
 
 PoolAllocator::PoolAllocator(const size_t InTotalAllocSize, const size_t InChunckSize) :
 	Allocator{ InTotalAllocSize },
+	mStartPointer{ nullptr },
 	mChunckSize{ InChunckSize }
 {
 	assert(InChunckSize >= 8 && "Chunk size must be greater or equal to 8");
@@ -18,6 +19,10 @@ PoolAllocator::PoolAllocator(const size_t InTotalAllocSize, const size_t InChunc
 
 void PoolAllocator::Init()
 {
+	if (mStartPointer != nullptr)
+	{
+		free(mStartPointer);
+	}
 	mStartPointer = malloc(mTotalAllocSize);
 }
 

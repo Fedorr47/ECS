@@ -2,9 +2,6 @@
 
 #include "IEntityManager.h"
 #include "ComponentAdder.h"
-#include "ComponentsContainer.h"
-
-using ComponentsContainerType = ComponentsContainer<std::allocator<IComponentBase>>;
 
 class ECSF_API EntityManager : public IEntityManager
 {
@@ -14,7 +11,6 @@ protected:
 		mMaxEntitiesCount{ DEFAULT_MAX_ENTITIES_COUNT }
 	{
 		mFreeEntityIDs.resize(DEFAULT_MAX_ENTITIES_COUNT);
-		mComponentsContainer = std::make_unique<ComponentsContainerType>();
 		mComponentAdder = std::make_unique<ComponentAdder>();
 	}
 public:
@@ -62,7 +58,6 @@ private:
 	size_t mMaxEntitiesCount;
 	std::vector<bool> mFreeEntityIDs;
 
-	std::unique_ptr<ComponentsContainerType> mComponentsContainer;
 	std::unique_ptr<ComponentAdder> mComponentAdder;
 
 	static IEntityManager* ObjectEntityManager;

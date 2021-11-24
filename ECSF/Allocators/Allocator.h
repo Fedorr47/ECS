@@ -13,6 +13,7 @@ public:
 	virtual void* Allocate(const size_t InAllocSize, const size_t InAligment = 0) = 0;
 	virtual void Free(void* InPointer) = 0;
 	virtual void Init() = 0;
+	virtual void* GetData() = 0;
 
 protected:
 	size_t mTotalAllocSize;

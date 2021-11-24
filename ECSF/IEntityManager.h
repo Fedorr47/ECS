@@ -10,7 +10,6 @@
 #include <optional>
 
 #include "ECS_utils.h"
-#include "ComponentsContainer.h"
 
 class ECSF_API IEntityManager
 {
@@ -34,5 +33,5 @@ public:
 	virtual bool AddComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
 	virtual bool RemoveComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
 	virtual bool HasComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
-	virtual std::optional<IComponentBase*> GetComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
+	virtual std::optional<class IComponentBase*> GetComponent(const EntityID InEntityId, const ComponentType InComponentType) = 0;
 };
