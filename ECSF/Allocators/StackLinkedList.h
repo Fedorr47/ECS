@@ -9,19 +9,33 @@ public:
 		T data;
 		Node* next;
 	};
-
-	Node* head;
-
+	
+	Node* head = nullptr;
+	Node* tail = nullptr;
+	
 	StackLinkedList() = default;
 	void push(Node* InNode)
 	{
-		InNode->next = head;
-		head = InNode;
+		if (head == nullptr)
+		{
+			head = InNode;
+			tail = head;
+		}
+		else
+		{
+			InNode->next = nullptr;
+			tail->next = InNode;
+			tail = InNode;
+		}
 	}
 	Node* pop()
 	{
 		Node* top = head;
 		head = head->next;
+		if (head == nullptr)
+		{
+			tail = nullptr;
+		}
 		return top;
 	}
 private:

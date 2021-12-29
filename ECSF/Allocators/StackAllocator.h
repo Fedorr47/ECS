@@ -55,5 +55,6 @@ public:
 	void Free(void* InPointer) override;
 	void Init() override;
 	void* GetData() override { return reinterpret_cast<void*>(reinterpret_cast<size_t>(mStartPointer) + mOffset); };
-	void Reset();
+	size_t GetHeaderSize() override { return 0; };
+	void Reset() override;
 };

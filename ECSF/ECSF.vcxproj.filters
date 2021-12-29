@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Allocators">
+      <UniqueIdentifier>{efbc8382-20a4-4068-b4fa-22073d49200c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Allocators">
+      <UniqueIdentifier>{ae27dc29-2c07-48c3-9e92-e0fd31ba9476}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -27,12 +33,6 @@
     <ClInclude Include="Bitmask.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Allocator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ComponentContainer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="IEntityManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -42,11 +42,26 @@
     <ClInclude Include="IComponentBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IComponentAdder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ComponentAdder.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Allocators\Allocator.h">
+      <Filter>Header Files\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="Allocators\PoolAllocator.h">
+      <Filter>Header Files\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="Allocators\StackLinkedList.h">
+      <Filter>Header Files\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="Allocators\StackAllocator.h">
+      <Filter>Header Files\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="Allocators\FArray.h">
+      <Filter>Header Files\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="Allocators\Utils.h">
+      <Filter>Header Files\Allocators</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +76,12 @@
     </ClCompile>
     <ClCompile Include="ComponentAdder.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Allocators\PoolAllocator.cpp">
+      <Filter>Source Files\Allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="Allocators\StackAllocator.cpp">
+      <Filter>Source Files\Allocators</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

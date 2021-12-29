@@ -1,5 +1,3 @@
-#include "pch.h"
-
 #define max(a,b) ((a)>(b)?(a):(b))
 
 #include <assert.h>
@@ -37,8 +35,9 @@ void* StackAllocator::Allocate(const size_t InAllocSize, const size_t InAligment
 {
 	const size_t AlllocationHeaderSize = sizeof(AllocationHeader);
 	const size_t lCurrentAddress = reinterpret_cast<size_t>(mStartPointer) + mOffset;
+	const size_t lAligment = InAligment == 0 ? 1 : InAligment;
 
-	size_t lPadding = CalculatePaddingWithHeader(lCurrentAddress, InAligment, sizeof(AlllocationHeaderSize));
+	size_t lPadding = CalculatePaddingWithHeader(lCurrentAddress, lAligment, sizeof(AlllocationHeaderSize));
 
 	if (mOffset + lPadding + InAllocSize > mTotalAllocSize)
 	{
